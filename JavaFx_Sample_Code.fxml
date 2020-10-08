@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="535.0" prefWidth="1169.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nucleus.dbcomparison.controller.CompareSchemaController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+        <AnchorPane layoutX="124.0" layoutY="37.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <BorderPane fx:id="brd" layoutX="45.0" layoutY="33.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <top>
+                        <Pane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: #94D1FD;" BorderPane.alignment="CENTER" />
+                    </top>
+                    <bottom>
+                        <Pane prefHeight="53.0" prefWidth="600.0" style="-fx-background-color: #94D1FD;" BorderPane.alignment="CENTER" />
+                    </bottom>
+                    <left>
+                        <Pane prefHeight="437.0" prefWidth="216.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+                    </left>
+                    <right>
+                        <Pane prefHeight="437.0" prefWidth="14.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+                    </right>
+                    <center>
+                        <HBox prefHeight="437.0" prefWidth="721.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <GridPane fx:id="baseGridPane" prefHeight="437.0" prefWidth="369.0" style="-fx-background-color: white;" HBox.hgrow="NEVER">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="74.0" minWidth="10.0" prefWidth="36.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="28.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="8.0" prefWidth="127.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="189.0" />
+                              <ColumnConstraints />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                              <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fillHeight="false" maxHeight="38.0" minHeight="10.0" prefHeight="27.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints fillHeight="false" maxHeight="38.0" minHeight="10.0" prefHeight="29.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="38.0" minHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints fillHeight="false" maxHeight="38.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints fillHeight="false" maxHeight="38.0" minHeight="8.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints fillHeight="false" maxHeight="37.0" minHeight="0.0" prefHeight="34.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints fillHeight="false" maxHeight="174.0" minHeight="10.0" prefHeight="163.0" valignment="TOP" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                              <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="28.0" prefWidth="225.0" text="Base Environment (A)" GridPane.columnSpan="2147483647">
+                                 <font>
+                                    <Font name="Calibri" size="24.0" />
+                                 </font>
+                              </Label>
+                                        <RadioButton fx:id="radioDataBase" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" selected="true" text="Database" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                                 <toggleGroup>
+                                                <ToggleGroup fx:id="basetg" />
+                                 </toggleGroup>
+                                        </RadioButton>
+                                        <RadioButton fx:id="radioDataDic" disable="true" layoutX="93.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" text="DataDictionary" toggleGroup="$basetg" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font></RadioButton>
+                              <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="17.0" prefWidth="109.0" text="Database" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="combodataBaseTypeBase" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#fnDataBaseTypeChange" prefHeight="33.0" prefWidth="116.0" promptText="Select" style="-fx-opacity: 1; -fx-background-color: white; -fx-border-color: #969797; -fx-border-radius: 3;" styleClass="sha" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" />
+                                 </GridPane.margin></ComboBox>
+                                        <TextField fx:id="baseUserNameTxt" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#fnShowtips" prefHeight="29.0" prefWidth="195.0" promptText="User Name " GridPane.columnSpan="3" GridPane.rowIndex="3">
+                                            <GridPane.margin>
+                                                <Insets right="9.0" />
+                                            </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font>
+                                        </TextField>
+                              <PasswordField fx:id="baseUserPassTxt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="195.0" promptText="Password" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets right="14.0" />
+                                 </GridPane.margin></PasswordField>
+                                        <TextField fx:id="baseIPTxt" layoutX="10.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="195.0" promptText="HOST" GridPane.columnSpan="3" GridPane.rowIndex="4">
+                                            <GridPane.margin>
+                                                <Insets right="9.0" />
+                                            </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font></TextField>
+                                        <TextField fx:id="basePORTTxt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="195.0" promptText="PORT" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                            <GridPane.margin>
+                                                <Insets right="14.0" />
+                                            </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font></TextField>
+                                        <TextField fx:id="baseSIDTxt" layoutX="10.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="195.0" promptText="SID/SERVICE" GridPane.columnSpan="3" GridPane.rowIndex="5">
+                                            <GridPane.margin>
+                                                <Insets right="9.0" />
+                                            </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font></TextField>
+                                        <Button fx:id="btnFetchUsers" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#fnValidateAndFetchUsers" onMouseEntered="#changeCursorHand" onMouseExited="#changeCursor" prefHeight="29.0" prefWidth="196.0" style="-fx-background-color: #447EA7;" text="Fetch Base Users" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                            <GridPane.margin>
+                                                <Insets right="14.0" />
+                                            </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font></Button>
+                                    </children>
+                                </GridPane>
+                        <GridPane fx:id="w" prefHeight="437.0" prefWidth="160.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="10.0" prefWidth="42.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="77.0" minWidth="10.0" prefWidth="77.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="59.0" minWidth="10.0" prefWidth="42.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="138.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="btnCompareDB" mnemonicParsing="false" onAction="#fnCompareDBSchema" onMouseEntered="#changeCursorHand" onMouseExited="#changeCursor" prefHeight="29.0" prefWidth="126.0" style="-fx-background-color: #447EA7;" text="Compare" textFill="WHITE" visible="true" GridPane.columnSpan="3" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri Bold" size="15.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="2.0" right="10.0" />
+                                 </padding>
+                              </Button>
+                              <Label prefHeight="36.0" prefWidth="71.0" text="  (A-B)" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Calibri" size="24.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="40.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Button disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="&lt;------&gt;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets bottom="150.0" />
+                                 </GridPane.margin>
+                              </Button>
+                           </children>
+                        </GridPane>
+                                  <GridPane fx:id="targetGrid" prefHeight="280.0" prefWidth="360.0" style="-fx-background-color: white;" HBox.hgrow="NEVER">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="74.0" minWidth="10.0" prefWidth="36.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="23.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="8.0" prefWidth="125.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="178.0" />
+                                        <ColumnConstraints />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fillHeight="false" maxHeight="38.0" minHeight="10.0" prefHeight="34.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints fillHeight="false" maxHeight="38.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="38.0" minHeight="3.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints fillHeight="false" maxHeight="38.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints fillHeight="false" maxHeight="38.0" minHeight="8.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints fillHeight="false" maxHeight="37.0" minHeight="0.0" prefHeight="35.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                        <RowConstraints fillHeight="false" maxHeight="174.0" minHeight="10.0" prefHeight="133.0" valignment="TOP" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                              <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="33.0" prefWidth="275.0" text="Target Environment (B)" textAlignment="CENTER" GridPane.columnSpan="2147483647">
+                                 <font>
+                                    <Font name="Calibri" size="24.0" />
+                                 </font>
+                              </Label>
+                                        <RadioButton fx:id="radioDataBaseTarget" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" selected="true" text="Database" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="targetTG" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="radioDataDicTarget" disable="true" layoutX="93.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" text="DataDictionary" toggleGroup="$targetTG" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font></RadioButton>
+                              <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="17.0" prefWidth="109.0" text="Database" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Calibri" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="combodataBaseTypeTarget" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="28.0" prefWidth="115.0" promptText="Select" style="-fx-opacity: 4; -fx-background-color: white; -fx-border-color: #969797; -fx-border-radius: 3;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                        <TextField fx:id="targetUserNameTxt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="195.0" promptText="User Name " GridPane.columnSpan="3" GridPane.rowIndex="3">
+                                            <GridPane.margin>
+                                                <Insets right="10.0" />
+                                            </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font>
+                                        </TextField>
+                              <PasswordField fx:id="targetUserPassTxt" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="195.0" promptText="Password" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets right="4.0" />
+                                 </GridPane.margin>
+                              </PasswordField>
+                                        <TextField fx:id="targetIPTxt" layoutX="10.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="195.0" promptText="HOST" GridPane.columnSpan="3" GridPane.rowIndex="4">
+                                            <GridPane.margin>
+                                                <Insets right="10.0" />
+                                            </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font></TextField>
+                                        <TextField fx:id="targetPORTTxt" layoutX="10.0" layoutY="33.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="195.0" promptText="PORT" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                            <GridPane.margin>
+                                                <Insets right="4.0" />
+                                            </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font></TextField>
+                                        <TextField fx:id="targetSIDTxt" layoutX="10.0" layoutY="9.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="195.0" promptText="SID/SERVICE" GridPane.columnSpan="3" GridPane.rowIndex="5">
+                                            <GridPane.margin>
+                                                <Insets right="10.0" />
+                                            </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri" size="13.0" />
+                                 </font></TextField>
+                                        <Button fx:id="btnFetchUsersTarget" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#fnValidateAndFetchTargetUsers" onMouseEntered="#changeCursorHand" onMouseExited="#changeCursor" prefHeight="29.0" prefWidth="195.0" style="-fx-background-color: #447EA7;" text="Fetch Target Users" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                            <GridPane.margin>
+                                                <Insets right="4.0" />
+                                            </GridPane.margin>
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font></Button>
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </HBox>
+                    </center>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
